@@ -1,0 +1,23 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.onlinedj.app
+files:
+  - filter:
+      - electron/**/*
+      - src/preload.js
+extraResources:
+  - from: vite
+    to: dist
+    filter:
+      - '**/*'
+  - from: src/preload.js
+    to: src/preload.js
+  - from: src/loading.html
+    to: src/loading.html
+asarUnpack:
+  - src/preload.js
+  - dist/**/*
+win:
+  icon: ./public/assets/logo.png
+electronVersion: 28.1.3
